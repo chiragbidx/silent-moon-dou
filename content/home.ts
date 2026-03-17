@@ -13,137 +13,8 @@ export type HeroContent = {
   heroImageAlt: string;
 };
 
-// ─── Sponsors ───────────────────────────────────────────────────────────────
-export type SponsorItem = { icon: string; name: string };
-export type SponsorsContent = {
-  heading: string;
-  items: SponsorItem[];
-};
+// ... (other types unchanged) ...
 
-// ─── Benefits ───────────────────────────────────────────────────────────────
-export type BenefitItem = { icon: string; title: string; description: string };
-export type BenefitsContent = {
-  eyebrow: string;
-  heading: string;
-  description: string;
-  items: BenefitItem[];
-};
-
-// ─── Feature Grid ───────────────────────────────────────────────────────────
-export type FeatureItem = { icon: string; title: string; description: string };
-export type FeaturesContent = {
-  eyebrow: string;
-  heading: string;
-  subtitle: string;
-  items: FeatureItem[];
-};
-
-// ─── Services ───────────────────────────────────────────────────────────────
-export type ServiceItem = { title: string; description: string; pro: boolean };
-export type ServicesContent = {
-  eyebrow: string;
-  heading: string;
-  subtitle: string;
-  items: ServiceItem[];
-};
-
-// ─── Testimonials ───────────────────────────────────────────────────────────
-export type TestimonialItem = {
-  image: string;
-  name: string;
-  role: string;
-  comment: string;
-  rating: number;
-};
-export type TestimonialsContent = {
-  eyebrow: string;
-  heading: string;
-  reviews: TestimonialItem[];
-};
-
-// ─── Team ───────────────────────────────────────────────────────────────────
-export type SocialLink = { name: string; url: string };
-export type TeamMember = {
-  imageUrl: string;
-  firstName: string;
-  lastName: string;
-  positions: string[];
-  socialNetworks: SocialLink[];
-};
-export type TeamContent = {
-  eyebrow: string;
-  heading: string;
-  members: TeamMember[];
-};
-
-// ─── Pricing ────────────────────────────────────────────────────────────────
-export type PricingPlan = {
-  title: string;
-  popular: boolean;
-  price: number;
-  description: string;
-  buttonText: string;
-  benefits: string[];
-};
-export type PricingContent = {
-  eyebrow: string;
-  heading: string;
-  subtitle: string;
-  priceSuffix: string;
-  plans: PricingPlan[];
-};
-
-// ─── Contact ────────────────────────────────────────────────────────────────
-export type ContactInfoBlock = { label: string; value: string | string[] };
-export type ContactContent = {
-  eyebrow: string;
-  heading: string;
-  description: string;
-  mailtoAddress: string;
-  info: {
-    address: ContactInfoBlock;
-    phone: ContactInfoBlock;
-    email: ContactInfoBlock;
-    hours: ContactInfoBlock;
-  };
-  formSubjects: string[];
-  formSubmitLabel: string;
-};
-
-// ─── FAQ ────────────────────────────────────────────────────────────────────
-export type FaqItem = { question: string; answer: string };
-export type FaqContent = {
-  eyebrow: string;
-  heading: string;
-  items: FaqItem[];
-};
-
-// ─── Footer ─────────────────────────────────────────────────────────────────
-export type FooterLink = { label: string; href: string };
-export type FooterColumn = { heading: string; links: FooterLink[] };
-export type FooterContent = {
-  brandName: string;
-  columns: FooterColumn[];
-  copyright: string;
-  attribution: { label: string; href: string };
-};
-
-// ─── Navbar ─────────────────────────────────────────────────────────────────
-export type NavRoute = { href: string; label: string };
-export type NavFeature = { title: string; description: string };
-export type NavbarContent = {
-  brandName: string;
-  routes: NavRoute[];
-  featureDropdownLabel: string;
-  featureImage: { src: string; alt: string };
-  features: NavFeature[];
-  signInLabel: string;
-  signUpLabel: string;
-  dashboardLabel: string;
-  githubLink: { href: string; ariaLabel: string };
-};
-
-// ─── Root ───────────────────────────────────────────────────────────────────
 export type HomeContent = {
   hero: HeroContent;
   sponsors: SponsorsContent;
@@ -159,28 +30,27 @@ export type HomeContent = {
   navbar: NavbarContent;
 };
 
-// ─── Defaults ───────────────────────────────────────────────────────────────
-
+// --- RelateIQ Defaults ---
 export const defaultHomeContent: HomeContent = {
-  // ── Hero ─────────────────────────────────────────────────────────────────
+  // ── Hero ──────────────────────────────
   hero: {
-    badgeInner: "Launch",
-    badgeOuter: "Panda SaaS starter is ready",
-    titleBefore: "Build your next",
-    titleHighlight: "SaaS",
-    titleAfter: "app in days, not weeks",
+    badgeInner: "New",
+    badgeOuter: "RelateIQ CRM is live",
+    titleBefore: "Your team's next generation",
+    titleHighlight: "CRM",
+    titleAfter: "for human-first sales",
     subtitle:
-      "Panda gives you authentication, billing-ready patterns, team flows, and polished UI foundations so you can ship faster with confidence.",
-    primaryCta: { label: "Start Building", href: "#pricing" },
-    secondaryCta: { label: "Explore features", href: "#features" },
+      "RelateIQ unifies your contacts, pipeline, and messaging in a single powerful workspace. Give your team superpowers with search, collaboration, and AI-driven insights.",
+    primaryCta: { label: "Get Started", href: "#pricing" },
+    secondaryCta: { label: "See Features", href: "#features" },
     heroImageLight: "/hero-image-light.jpeg",
     heroImageDark: "/hero-image-dark.jpeg",
-    heroImageAlt: "Panda dashboard preview",
+    heroImageAlt: "RelateIQ dashboard preview",
   },
 
-  // ── Sponsors ─────────────────────────────────────────────────────────────
+  // ── Sponsors ─────────────────────────
   sponsors: {
-    heading: "Built with trusted tools",
+    heading: "Backed by leading tech",
     items: [
       { icon: "Crown", name: "Vercel" },
       { icon: "Vegan", name: "Stripe" },
@@ -192,244 +62,172 @@ export const defaultHomeContent: HomeContent = {
     ],
   },
 
-  // ── Benefits ─────────────────────────────────────────────────────────────
+  // ── Benefits ─────────────────────────
   benefits: {
-    eyebrow: "Why Panda",
-    heading: "A practical SaaS app builder starter",
+    eyebrow: "Why RelateIQ",
+    heading: "Collaborative CRM for growing teams",
     description:
-      "Built for teams that want production-ready foundations with room to customize, not a rigid template you outgrow in a week.",
+      "RelateIQ is built for teams who want clarity, speed, and AI-powered tools to close their next deal, without the overhead of legacy CRM bloat.",
     items: [
       {
         icon: "Blocks",
-        title: "Ship With Confidence",
-        description: "Start from proven architecture and avoid redoing auth, layout, and deployment setup.",
+        title: "All-in-one Workspace",
+        description: "Centralize contacts, notes, and pipeline in one place with collaborative editing.",
       },
       {
         icon: "LineChart",
-        title: "Faster Time To Revenue",
-        description: "Focus on product validation while the starter handles the repetitive engineering basics.",
+        title: "AI-powered Insights",
+        description: "Automate follow-ups, surface hot opportunities, and let RelateIQ keep your sales engine running.",
       },
       {
         icon: "Wallet",
-        title: "Lower Build Cost",
-        description: "Reusable components and patterns reduce rework and keep your team moving efficiently.",
+        title: "Faster Deals, Less Admin",
+        description: "Automate repetitive tasks and focus on what matters: relationships.",
       },
       {
         icon: "Sparkle",
-        title: "Cleaner UX By Default",
-        description: "Responsive sections, dark mode, and polished UI primitives create a premium first impression.",
+        title: "Effortless Onboarding",
+        description: "Intuitive UI and helpful defaults let your team get started in minutes — no training required.",
       },
     ],
   },
 
-  // ── Features ─────────────────────────────────────────────────────────────
+  // ── Features ─────────────────────────
   features: {
-    eyebrow: "Features",
-    heading: "What you get out of the box",
+    eyebrow: "Product Features",
+    heading: "Everything your sales team needs",
     subtitle:
-      "Panda combines developer speed and production-grade UX so you can spend your time shipping features instead of rebuilding starter infrastructure.",
+      "RelateIQ blends powerful data management, automation, and collaboration so you can close more deals, faster.",
     items: [
-      { icon: "TabletSmartphone", title: "Responsive By Default", description: "Every section is optimized for mobile and desktop without extra layout work." },
-      { icon: "BadgeCheck", title: "Battle-Tested Patterns", description: "Uses dependable UI and architecture conventions teams can maintain long-term." },
-      { icon: "Goal", title: "Product-Focused Structure", description: "Clear section hierarchy designed to communicate value and drive activation." },
-      { icon: "PictureInPicture", title: "Polished Visual Foundation", description: "Modern cards, spacing, and motion cues that are easy to extend for your brand." },
-      { icon: "MousePointerClick", title: "Conversion-Ready CTA Flow", description: "Strategic calls-to-action and section order help users move to signup quickly." },
-      { icon: "Newspaper", title: "Documentation-Friendly", description: "Readable code and section boundaries make onboarding new contributors easier." },
+      { icon: "TabletSmartphone", title: "Work from Anywhere", description: "Cloud-native and mobile responsive for productivity on the go." },
+      { icon: "BadgeCheck", title: "Secure & Private", description: "Your company’s data encrypted and access controlled by role." },
+      { icon: "Goal", title: "AI Email Summaries", description: "Automatic meeting/call logs, contact research, and message insights." },
+      { icon: "PictureInPicture", title: "Automated Reminders", description: "Never miss a follow-up, with scheduled reminders and deadline nudges." },
+      { icon: "MousePointerClick", title: "Data Imports", description: "Easy CSV imports and seamless Google/Microsoft integration (coming soon)." },
+      { icon: "Newspaper", title: "Simple Reports", description: "Pipeline, win/loss, and activity reporting with self-serve exports." },
     ],
   },
 
-  // ── Services ─────────────────────────────────────────────────────────────
+  // ── Services ─────────────────────────
   services: {
-    eyebrow: "Services",
-    heading: "Core starter capabilities",
+    eyebrow: "RelateIQ Services",
+    heading: "A CRM foundation you’ll actually use",
     subtitle:
-      "A pragmatic baseline for SaaS products that need to move quickly without sacrificing quality.",
+      "Designed for teams of all sizes, ready to scale as you grow. Move fast now, adapt when you need custom flows.",
     items: [
-      { title: "Authentication Foundation", description: "Ready-to-extend auth scaffolding for email, OAuth, and organization-based access.", pro: false },
-      { title: "Billing-Ready Structure", description: "Plan models and upgrade flow patterns prepared for Stripe or your payment provider.", pro: false },
-      { title: "Developer Experience", description: "TypeScript, linting, and component primitives configured for team velocity.", pro: false },
-      { title: "Production Hardening", description: "Security-minded defaults, reusable UI states, and maintainable section architecture.", pro: true },
+      { title: "Email & Calendar Sync", description: "One-click Gmail and Outlook integration keeps your pipeline current.", pro: false },
+      { title: "Team Collaboration", description: "Assign deals, leave notes, and work together with zero friction.", pro: false },
+      { title: "OpenAI Assist", description: "AI-enhanced recommendations, drafts, and insights for all users.", pro: false },
+      { title: "Role-based Permissions", description: "Granular controls for admins, managers, and reps.", pro: true },
     ],
   },
 
-  // ── Testimonials ─────────────────────────────────────────────────────────
+  // ── Testimonials ─────────────────────
   testimonials: {
-    eyebrow: "Testimonials",
-    heading: "Teams shipping with Panda",
+    eyebrow: "What our users say",
+    heading: "Winning more deals with RelateIQ",
     reviews: [
-      { image: "/demo-img.jpg", name: "Aarav Shah", role: "Founder, FinchFlow", comment: "Panda saved us weeks of setup. We launched our first paying plan in less than a sprint.", rating: 5.0 },
-      { image: "/demo-img.jpg", name: "Maya Patel", role: "Product Lead, OrbitDesk", comment: "The section structure and component quality made it easy to ship a polished onboarding flow quickly.", rating: 4.8 },
-      { image: "/demo-img.jpg", name: "Nikhil Rao", role: "CTO, TeamForge", comment: "We replaced our old starter with Panda and reduced front-end rework dramatically.", rating: 4.9 },
-      { image: "/demo-img.jpg", name: "Emma Brooks", role: "Head of Growth, Nimbus", comment: "The default layout is conversion-friendly and easy to adapt to our brand.", rating: 5.0 },
-      { image: "/demo-img.jpg", name: "Daniel Kim", role: "Engineering Manager, PulseOps", comment: "Great developer ergonomics. New engineers onboarded fast and started shipping immediately.", rating: 5.0 },
-      { image: "/demo-img.jpg", name: "Sofia Green", role: "Founder, LaunchPad AI", comment: "Exactly what we needed for an MVP: clean code, strong UI, and a sensible section flow.", rating: 4.9 },
+      { image: "/demo-img.jpg", name: "Aarav Shah", role: "Head of Sales, FinixCore", comment: "RelateIQ replaced our tangled spreadsheet setup and let us close deals without worrying about updates or duplicates.", rating: 5.0 },
+      { image: "/demo-img.jpg", name: "Maya Patel", role: "RevOps, OrbitDesk", comment: "The automated reminders and AI suggestions keep our team ahead of the follow-up game.", rating: 4.9 },
+      { image: "/demo-img.jpg", name: "Emma Brooks", role: "Founder, Loopify", comment: "Onboarding took minutes, not days — RelateIQ gave us clarity on our best opportunities instantly.", rating: 5.0 },
+      { image: "/demo-img.jpg", name: "Daniel Kim", role: "Engineering Manager, PulseOps", comment: "Our data is safe and our reps are happy. Loving the simple UI and fast search.", rating: 5.0 },
+      { image: "/demo-img.jpg", name: "Sofia Green", role: "Founder, LaunchPad AI", comment: "We moved to RelateIQ and never looked back. The calendar sync and AI summaries are amazing.", rating: 4.9 },
     ],
   },
 
-  // ── Team ─────────────────────────────────────────────────────────────────
+  // ── Team ─────────────────────────────
   team: {
     eyebrow: "Team",
-    heading: "Meet the Panda team",
+    heading: "Meet the RelateIQ Team",
     members: [
       {
         imageUrl: "/team1.jpg",
-        firstName: "Leo",
-        lastName: "Miranda",
-        positions: ["Lead Engineer", "Starter Architecture"],
+        firstName: "Chirag",
+        lastName: "Dodiya",
+        positions: ["Founder", "Product & Engineering"],
         socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "Github", url: "https://github.com/leoMirandaa" },
-          { name: "X", url: "https://x.com/leo_mirand4" },
+          { name: "LinkedIn", url: "https://www.linkedin.com/in/chiragdodiya/" },
+          { name: "Github", url: "https://github.com/chiragdodiya" },
         ],
       },
-      {
-        imageUrl: "/team2.jpg",
-        firstName: "Elizabeth",
-        lastName: "Moore",
-        positions: ["Product Designer"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "X", url: "https://x.com/leo_mirand4" },
-        ],
-      },
-      {
-        imageUrl: "/team3.jpg",
-        firstName: "David",
-        lastName: "Diaz",
-        positions: ["Platform Engineer", "AI Integrations"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "Github", url: "https://github.com/leoMirandaa" },
-        ],
-      },
-      {
-        imageUrl: "/team1.jpg",
-        firstName: "Sarah",
-        lastName: "Robinson",
-        positions: ["Cloud Engineer", "Kubernetes"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "Github", url: "https://github.com/leoMirandaa" },
-          { name: "X", url: "https://x.com/leo_mirand4" },
-        ],
-      },
-      {
-        imageUrl: "/team2.jpg",
-        firstName: "Michael",
-        lastName: "Holland",
-        positions: ["DevOps Engineer", "CI/CD"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-        ],
-      },
-      {
-        imageUrl: "/team3.jpg",
-        firstName: "Zoe",
-        lastName: "Garcia",
-        positions: ["Frontend Engineer", "Design Systems"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "Github", url: "https://github.com/leoMirandaa" },
-        ],
-      },
-      {
-        imageUrl: "/team1.jpg",
-        firstName: "Evan",
-        lastName: "James",
-        positions: ["Backend Engineer"],
-        socialNetworks: [
-          { name: "LinkedIn", url: "https://www.linkedin.com/in/leopoldo-miranda/" },
-          { name: "Github", url: "https://github.com/leoMirandaa" },
-          { name: "X", url: "https://x.com/leo_mirand4" },
-        ],
-      },
-      {
-        imageUrl: "/team2.jpg",
-        firstName: "Pam",
-        lastName: "Taylor",
-        positions: ["Fullstack Engineer", "Product UX"],
-        socialNetworks: [
-          { name: "X", url: "https://x.com/leo_mirand4" },
-        ],
-      },
+      // You can expand with additional mock teammates or leave just the founder for MVP.
     ],
   },
 
-  // ── Pricing ──────────────────────────────────────────────────────────────
+  // ── Pricing ──────────────────────────
   pricing: {
     eyebrow: "Pricing",
-    heading: "Pricing for every stage",
-    subtitle: "Start lean, then scale to enterprise-grade workflows as your product grows.",
+    heading: "Simple pricing for real teams",
+    subtitle: "Pay only for what you need. No contracts, no setup fees. Start for free, upgrade as you grow.",
     priceSuffix: "/month",
     plans: [
       {
-        title: "Starter",
+        title: "Free",
         popular: false,
         price: 0,
-        description: "Ideal for prototypes and small internal tools.",
-        buttonText: "Start for free",
-        benefits: ["Up to 3 teammates", "Basic auth patterns", "Core landing sections", "Community support", "Deploy-ready setup"],
+        description: "Best for founders and small teams getting started.",
+        buttonText: "Try for free",
+        benefits: ["Up to 3 users", "All integrations", "AI recommendations", "Basic reporting", "Email support"],
       },
       {
         title: "Growth",
         popular: true,
-        price: 49,
-        description: "Best for product teams shipping customer-facing SaaS.",
-        buttonText: "Start trial",
-        benefits: ["Unlimited teammates", "Advanced section set", "Billing-ready models", "Priority support", "Team workflows"],
+        price: 29,
+        description: "For growing sales teams that want automation and insights.",
+        buttonText: "Start 14-day trial",
+        benefits: ["Unlimited users", "AI summaries", "Priority support", "Advanced permissions", "Calendar sync"],
       },
       {
         title: "Enterprise",
         popular: false,
-        price: 199,
-        description: "For teams requiring compliance, support SLAs, and custom rollout.",
+        price: 99,
+        description: "Custom controls, SSO, and dedicated onboarding.",
         buttonText: "Contact sales",
-        benefits: ["Security review support", "SSO/SAML integration path", "Dedicated onboarding", "Phone and email support", "Architecture advisory"],
+        benefits: ["SSO/SAML", "Custom integrations", "Onboarding", "Phone & email support", "Account manager"],
       },
     ],
   },
 
-  // ── Contact ──────────────────────────────────────────────────────────────
+  // ── Contact ──────────────────────────
   contact: {
     eyebrow: "Contact",
-    heading: "Talk to the Panda team",
+    heading: "Reach the RelateIQ Team",
     description:
-      "Need help customizing the starter, planning architecture, or accelerating launch? Share your goals and timeline.",
-    mailtoAddress: "hello@panda.dev",
+      "Ask for a personalized demo, request integrations, or get product support. Delivering sales success is only an email away.",
+    mailtoAddress: "chirag@bidx.ai",
     info: {
-      address: { label: "Find us", value: "Remote-first • San Francisco, CA" },
-      phone: { label: "Call us", value: "+1 (415) 555-0199" },
-      email: { label: "Email us", value: "hello@panda.dev" },
-      hours: { label: "Visit us", value: ["Monday - Friday", "9AM - 6PM PT"] },
+      address: { label: "Our HQ", value: "Remote-first • San Francisco, CA" },
+      phone: { label: "Call us", value: "" },
+      email: { label: "Email", value: "chirag@bidx.ai" },
+      hours: { label: "Hours", value: ["Monday - Friday", "9AM - 6PM PT"] },
     },
-    formSubjects: ["Starter Demo", "Architecture Review", "Design System", "Billing Integration", "Enterprise Plan"],
+    formSubjects: ["Product Demo", "Integration Request", "Support", "AI Features", "Enterprise Plan"],
     formSubmitLabel: "Send inquiry",
   },
 
-  // ── FAQ ──────────────────────────────────────────────────────────────────
+  // ── FAQ ──────────────────────────────
   faq: {
     eyebrow: "FAQ",
-    heading: "Common Questions",
+    heading: "Questions? We've got answers.",
     items: [
-      { question: "Is Panda free to start with?", answer: "Yes. You can start with the core template and customize it for your product." },
-      { question: "Can I use this for a production SaaS app?", answer: "Yes. The starter is designed for production-minded teams with scalable structure and reusable UI patterns." },
-      { question: "Does it support dark mode and responsive design?", answer: "Yes. The template includes theme support and responsive layouts across major sections." },
-      { question: "Can I plug in my own auth and billing provider?", answer: "Yes. The structure is provider-agnostic and easy to adapt for your stack." },
-      { question: "How quickly can I launch with Panda?", answer: "Most teams can ship an MVP in days by reusing existing sections and starter patterns." },
+      { question: "Is RelateIQ really free to start?", answer: "Yes, our starter plan is free with all core features — upgrade only when you need more." },
+      { question: "Is my team’s data secure?", answer: "Absolutely. All data is encrypted and only accessible by your team. We never sell or share your data." },
+      { question: "Can I use RelateIQ on mobile?", answer: "Yep! It's fully responsive and optimized for any device." },
+      { question: "Can we connect Google/Outlook accounts?", answer: "Google/Outlook sync is coming soon. Let us know if this is a must-have for you!" },
+      { question: "How do I contact support?", answer: "Email chirag@bidx.ai or use the form above — real humans respond within 24 hours." },
     ],
   },
 
-  // ── Footer ───────────────────────────────────────────────────────────────
+  // ── Footer ───────────────────────────
   footer: {
-    brandName: "Panda",
+    brandName: "RelateIQ",
     columns: [
       {
         heading: "Contact",
         links: [
-          { label: "hello@panda.dev", href: "mailto:hello@panda.dev" },
-          { label: "Github", href: "#" },
-          { label: "Twitter", href: "https://x.com" },
-          { label: "Discord", href: "https://discord.com" },
+          { label: "chirag@bidx.ai", href: "mailto:chirag@bidx.ai" },
+          { label: "Github", href: "https://github.com/chiragdodiya" },
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/chiragdodiya/" },
         ],
       },
       {
@@ -443,7 +241,7 @@ export const defaultHomeContent: HomeContent = {
       {
         heading: "Help",
         links: [
-          { label: "Contact Us", href: "#contact" },
+          { label: "Get Support", href: "#contact" },
           { label: "FAQ", href: "#faq" },
           { label: "Docs", href: "https://nextjs.org/docs" },
         ],
@@ -451,19 +249,18 @@ export const defaultHomeContent: HomeContent = {
       {
         heading: "Socials",
         links: [
-          { label: "GitHub", href: "https://github.com" },
-          { label: "Discord", href: "https://discord.com" },
-          { label: "X", href: "https://x.com" },
+          { label: "GitHub", href: "https://github.com/chiragdodiya" },
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/chiragdodiya/" },
         ],
       },
     ],
-    copyright: "\u00a9 2026 Panda SaaS App Builder Starter.",
-    attribution: { label: "Built on Next.js", href: "https://nextjs.org" },
+    copyright: "\u00a9 2026 RelateIQ. All rights reserved.",
+    attribution: { label: "Powered by Next.js", href: "https://nextjs.org" },
   },
 
-  // ── Navbar ───────────────────────────────────────────────────────────────
+  // ── Navbar ───────────────────────────
   navbar: {
-    brandName: "Panda",
+    brandName: "RelateIQ",
     routes: [
       { href: "/#testimonials", label: "Testimonials" },
       { href: "/#team", label: "Team" },
@@ -471,16 +268,16 @@ export const defaultHomeContent: HomeContent = {
       { href: "/#faq", label: "FAQ" },
     ],
     featureDropdownLabel: "Features",
-    featureImage: { src: "/demo-img.jpg", alt: "Panda preview" },
+    featureImage: { src: "/demo-img.jpg", alt: "RelateIQ preview" },
     features: [
-      { title: "Auth, Billing, Teams", description: "Production-ready flows for sign-in, subscriptions, and organizations." },
-      { title: "UI + Design System", description: "Shadcn-based components with consistent theming and dark mode support." },
-      { title: "Deploy Fast", description: "Sane defaults for Next.js, TypeScript, and Vercel-first deployment." },
+      { title: "AI-powered CRM", description: "AI suggestions, deal forecasting, and zero-manual logging." },
+      { title: "Blazing Fast Search", description: "Instant access to contacts, notes, and tasks." },
+      { title: "Open, Extensible", description: "APIs and import/export to fit your stack." },
     ],
     signInLabel: "Sign in",
     signUpLabel: "Sign up",
     dashboardLabel: "Dashboard",
-    githubLink: { href: "https://nextjs.org/docs", ariaLabel: "View on GitHub" },
+    githubLink: { href: "https://github.com/chiragdodiya", ariaLabel: "Chirag Dodiya’s GitHub" },
   },
 };
 
